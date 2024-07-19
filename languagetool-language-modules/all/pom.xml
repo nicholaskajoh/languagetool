@@ -122,6 +122,11 @@
         </dependency>
         <dependency>
             <groupId>org.languagetool</groupId>
+            <artifactId>language-pcm</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.languagetool</groupId>
             <artifactId>language-pl</artifactId>
         </dependency>
         <dependency>

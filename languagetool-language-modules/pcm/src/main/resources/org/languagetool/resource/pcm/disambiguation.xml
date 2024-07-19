@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Naija Disambiguation Rules for LanguageTool
+    Copyright (C) 2024 Nicholas Kajoh (oga@naija.guru)
+-->
+<!DOCTYPE rules []>
+<rules lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/resource/disambiguation.xsd">
+    <rule name="Ignore spelling of url protocols" id="URI_PROTOCOL">
+        <pattern><!-- chrome://, ftp://, file:// -->
+            <token regexp="yes">[a-z\-]+</token>
+            <token spacebefore="no">:</token>
+            <token spacebefore="no">/</token>
+            <token spacebefore="no">/</token>
+            <token spacebefore="no" min="0">/</token>
+            <token spacebefore="no" regexp="yes">[a-z0-9\-]+</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+</rules>

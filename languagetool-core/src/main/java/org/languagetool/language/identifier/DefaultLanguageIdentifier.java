@@ -64,7 +64,7 @@ public class DefaultLanguageIdentifier extends LanguageIdentifier {
 
   // ast and gl often prevent the correct detection of Spanish (as they are quite similar
   // to Spanish, I assume) so we disable them for now. See LanguageDetectionEval.java:
-  private static final List<String> ignoreLangCodes = Arrays.asList("ast", "gl");
+  private static final List<String> ignoreLangCodes = Arrays.asList("ast", "gl", "pcm");
 
   // languages that we offer profiles for as they are not yet supported by language-detector:
   private static final List<String> externalLangCodes = Arrays.asList("eo", "crh");

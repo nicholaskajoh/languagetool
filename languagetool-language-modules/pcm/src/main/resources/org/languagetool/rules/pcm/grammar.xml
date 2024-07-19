@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.css"
+        title="Easy editing stylesheet" ?>
+<!--
+Naija grammar, typo and style rules for LanguageTool
+Copyright (C) 2024 Nicholas Kajoh (oga@naija.guru)
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301
+USA
+-->
+
+<!DOCTYPE rules []>
+
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="nl" xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.xsd">
+    <category id="COMMONLY_CONFUSED_WORDS" name="Commonly confused words" >
+        <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Sey subordinating conjunction">
+            <pattern>
+                <token postag_regexp="yes" postag="VB|JJ" />
+                <marker>
+                    <token regexp="yes">say|sei|se</token>
+                </marker>
+            </pattern>
+            <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> sey".</message>
+            <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
+            <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
+        </rule>
+    </category>
+</rules>
