@@ -25,8 +25,14 @@ USA
 <!DOCTYPE rules []>
 
 <rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="nl" xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.xsd">
-    <category id="COMMONLY_CONFUSED_WORDS" name="Commonly confused words" >
-        <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Sey subordinating conjunction">
+    <category id="COMMONLY_CONFUSED_WORDS" name="Words wey dey confuse people">
+        <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; dey correct">
+            <antipattern>
+                <token postag_regexp="yes" postag="SENT_START|VB"/>
+                <token>like</token>
+                <token>say</token>
+            </antipattern>
+
             <pattern>
                 <token postag_regexp="yes" postag="VB|JJ" />
                 <marker>
@@ -36,6 +42,422 @@ USA
             <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> sey".</message>
             <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
             <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
+        </rule>
+    </category>
+
+    <category id="ORTHOGRAPHIC_ERRORS" name="Orthographic Errors">
+        <rulegroup id="DETERMINERS_MISSPELLING" name="Check sey spelling of determiners dey correct">
+            <rule>
+                <pattern>
+                    <token>the</token>
+                </pattern>
+                <message>Spelling of English article "the" for Naija na <suggestion>di</suggestion>.</message>
+                <example correction="Di"><marker>The</marker> tin hook me for neck like bow tie.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>your</token>
+                </pattern>
+                <message>Spelling of English possessive "your" for Naija na <suggestion>yor</suggestion>.</message>
+                <example correction="Yor"><marker>Your</marker> head no correct.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>her</token>
+                </pattern>
+                <message>Spelling of English possessive "her" for Naija na <suggestion>ha</suggestion>.</message>
+                <example correction="ha">Na <marker>her</marker> shop we dey go.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>our</token>
+                </pattern>
+                <message>Spelling of English possessive "our" for Naija na <suggestion>awa</suggestion>.</message>
+                <example correction="Awa"><marker>Our</marker> problem be sey light no dey.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>their</token>
+                </pattern>
+                <message>Spelling of English possessive "their" for Naija na <suggestion>dia</suggestion>.</message>
+                <example correction="dia">I dey go <marker>their</marker> domot.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>their</token>
+                </pattern>
+                <message>Spelling of English possessive "their" for Naija na <suggestion>dia</suggestion>.</message>
+                <example correction="dia">I dey go <marker>their</marker> domot.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>which</token>
+                </pattern>
+                <message>Spelling of English interrogative determiner "which" for Naija na <suggestion>wich</suggestion>.</message>
+                <example correction="Wich"><marker>Which</marker> day yu come?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>other</token>
+                </pattern>
+                <message>Spelling of English determiner of difference "other" for Naija na <suggestion>oda</suggestion>.</message>
+                <example correction="oda">Na di <marker>other</marker> tin wey I wan talk to yu about.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>another</token>
+                </pattern>
+                <message>Spelling of English determiner of difference "another" for Naija na <suggestion>anoda</suggestion>.</message>
+                <example correction="anoda">E get <marker>another</marker> tin wey I wan talk to yu about.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="DEMONSTRATIVE_PRONOUNS_MISSPELLING" name="Check sey spelling of demonstrative pronouns dey correct">
+            <rule>
+                <pattern>
+                    <token>this</token>
+                </pattern>
+                <message>Spelling of English demonstrative pronoun "this" for Naija na <suggestion>dis</suggestion>.</message>
+                <example correction="Dis"><marker>This</marker> na di tin wey I want.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>that</token>
+                </pattern>
+                <message>Spelling of English demonstrative pronoun "that" for Naija na <suggestion>dat</suggestion>.</message>
+                <example correction="Dat"><marker>That</marker> boy sabi wetin I dey talk.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>these</token>
+                </pattern>
+                <message>Spelling of English demonstrative pronoun "these" for Naija na <suggestion>dese</suggestion>.</message>
+                <example correction="Dese"><marker>These</marker> men neva chop.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>those</token>
+                </pattern>
+                <message>Spelling of English demonstrative pronoun "that" for Naija na <suggestion>dat</suggestion>.</message>
+                <example correction="Dose">E no go better for <marker>those</marker> people.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="INTERROGATIVE_PRONOUNS_MISSPELLING" name="Check sey spelling of interrogative pronouns dey correct">
+            <rule>
+                <pattern>
+                    <token>which</token>
+                </pattern>
+                <message>Spelling of English interrogative pronoun "which" for Naija na <suggestion>wich</suggestion>.</message>
+                <example correction="Wich"><marker>Which</marker> kind wahala be dis?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>who</token>
+                </pattern>
+                <message>Spelling of English interrogative pronoun "who" for Naija na <suggestion>hu</suggestion>.</message>
+                <example correction="Hu"><marker>Who</marker> be dat?</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="PERSONAL_PRONOUNS_MISSPELLING" name="Check sey spelling of personal pronouns dey correct">
+            <rule>
+                <pattern>
+                    <token>myself</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "myself" for Naija na <suggestion>mysef</suggestion>.</message>
+                <example correction="mysef">Na me do <marker>myself</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>ourselves</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "ourselves" for Naija na <suggestion>awasef</suggestion>.</message>
+                <example correction="awasef">Wetin we go cook for <marker>ourselves</marker> dis night?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>you</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "you" for Naija na <suggestion>yu</suggestion>.</message>
+                <example correction="yu">Haw <marker>you</marker> dey?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>yourself</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "yourself" for Naija na <suggestion>yorsef</suggestion>.</message>
+                <example correction="yorsef">Make yu do am <marker>yourself</marker> o.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>him</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "him" for Naija na <suggestion>im</suggestion>.</message>
+                <example correction="im">Na <marker>him</marker> do am.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>himself</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "himself" for Naija na <suggestion>imsef</suggestion>.</message>
+                <example correction="imsef">E wan keep am for <marker>himself</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>her</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "her" for Naija na <suggestion>ha</suggestion>.</message>
+                <example correction="Ha"><marker>Her</marker> name na wetin?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>herself</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "herself" for Naija na <suggestion>hasef</suggestion>.</message>
+                <example correction="hasef">Na ha do <marker>herself</marker> o.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>them</token>
+                </pattern>
+                <message>Spelling of English personal pronoun "them" for Naija na <suggestion>dem</suggestion>.</message>
+                <example correction="Dem"><marker>Them</marker> no sabi sey tins dey hard.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>themselves</token>
+                </pattern>
+                <message>Spelling of English interrogative pronoun "themselves" for Naija na <suggestion>diasef</suggestion>.</message>
+                <example correction="diasef">Na dem do am to <marker>themselves</marker>.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="INDEFINITE_PRONOUNS_MISSPELLING" name="Check sey spelling of indefinite pronouns dey correct">
+            <rule>
+                <pattern>
+                    <token>something</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "something" for Naija na <suggestion>sometin</suggestion>.</message>
+                <example correction="Sometin"><marker>Something</marker> happen yesterday.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>somewhere</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "somewhere" for Naija na <suggestion>somewer</suggestion>.</message>
+                <example correction="somewer">I dey go <marker>somewhere</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>somebody</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "somebody" for Naija na <suggestion>somebodi</suggestion>.</message>
+                <example correction="Somebodi"><marker>Somebody</marker> talk sey water dey.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>anything</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "anything" for Naija na <suggestion>anytin</suggestion>.</message>
+                <example correction="anytin">I no sabi <marker>anything</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>anybody</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "anybody" for Naija na <suggestion>anybodi</suggestion>.</message>
+                <example correction="anybodi">No gree for <marker>anybody</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>everything</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "everything" for Naija na <suggestion>everytin</suggestion>.</message>
+                <example correction="Everytin"><marker>Everything</marker> don spoil.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>everywhere</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "everywhere" for Naija na <suggestion>everywer</suggestion>.</message>
+                <example correction="Everywer"><marker>Everywhere</marker> hot for dis country.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>everybody</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "everybody" for Naija na <suggestion>everybodi</suggestion>.</message>
+                <example correction="everybodi">No be <marker>everybody</marker> I sabi for der.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>nothing</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "nothing" for Naija na <suggestion>notin</suggestion>.</message>
+                <example correction="Notin"><marker>Nothing</marker> dey happen.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>nowhere</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "nowhere" for Naija na <suggestion>nower</suggestion>.</message>
+                <example correction="Nower"><marker>Nowhere</marker> safe for dis country o.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>nobody</token>
+                </pattern>
+                <message>Spelling of English indefinite pronoun "nobody" for Naija na <suggestion>nobodi</suggestion>.</message>
+                <example correction="Nobodi"><marker>Nobody</marker> sabi wetin do oga.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="ADVERBS_MISSPELLING" name="Check sey spelling of adverbs dey correct">
+            <rule>
+                <pattern>
+                    <token>when</token>
+                </pattern>
+                <message>Spelling of English adverb "when" for Naija na <suggestion>wen</suggestion>.</message>
+                <example correction="Wen"><marker>When</marker> yu dey go house?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>where</token>
+                </pattern>
+                <message>Spelling of English adverb "where" for Naija na <suggestion>wer</suggestion>.</message>
+                <example correction="Wer"><marker>Where</marker> yu dey?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>why</token>
+                </pattern>
+                <message>Spelling of English adverb "why" for Naija na <suggestion>wai</suggestion>.</message>
+                <example correction="Wai"><marker>Why</marker> yu no wan go Lagos?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>how</token>
+                </pattern>
+                <message>Spelling of English adverb "how" for Naija na <suggestion>haw</suggestion>.</message>
+                <example correction="Haw"><marker>How</marker> far?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>there</token>
+                </pattern>
+                <message>Spelling of English adverb "there" for Naija na <suggestion>der</suggestion>.</message>
+                <example correction="der">We dey go <marker>there</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>never</token>
+                </pattern>
+                <message>Spelling of English adverb "never" for Naija na <suggestion>neva</suggestion>.</message>
+                <example correction="neva">I <marker>never</marker> go market.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>enough</token>
+                </pattern>
+                <message>Spelling of English adverb "enough" for Naija na <suggestion>enuf</suggestion>.</message>
+                <example correction="enuf">I no get <marker>enough</marker> moni for my trip.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>here</token>
+                </pattern>
+                <message>Spelling of English quantifier "here" for Naija na <suggestion>yer</suggestion>.</message>
+                <example correction="yer">Wetin una dey do for <marker>here</marker>?</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="PREPOSITIONS_MISSPELLING" name="Check sey spelling of prepositions dey correct">
+            <rule>
+                <pattern>
+                    <token>with</token>
+                </pattern>
+                <message>Spelling of English preposition "with" for Naija na <suggestion>wit</suggestion>.</message>
+                <example correction="wit">Dem wan chop rice <marker>with</marker> stew.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>through</token>
+                </pattern>
+                <message>Spelling of English preposition "through" for Naija na <suggestion>tru</suggestion>.</message>
+                <example correction="tru">Yu no sabi wetin I dey go <marker>through</marker>.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="CONJUNCTIONS_MISSPELLING" name="Check sey spelling of conjunctions dey correct">
+            <rule>
+                <pattern>
+                    <token>whether</token>
+                </pattern>
+                <message>Spelling of English conjunction "whether" for Naija na <suggestion>weda</suggestion>.</message>
+                <example correction="weda">She ask me <marker>whether</marker> I go like work for am.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>because</token>
+                </pattern>
+                <message>Spelling of English conjunction "because" for Naija na <suggestion>becos</suggestion>.</message>
+                <example correction="becos">E no go come <marker>because</marker> im dey sick.</example>
+            </rule>
+        </rulegroup>
+    </category>
+
+    <category id="GRAMMAR" name="Grammar">
+        <rule id="NO_INDEFINITE_ARTICLES" name="Check sey text no get English indefinite articles for inside">
+            <pattern>
+               <marker>
+                   <token regexp="yes">a|an</token>
+               </marker>
+                <token postag="NN" />
+            </pattern>
+            <message>Naija no get indefinite article.</message>
+            <example correction="">I wan buy <marker>a</marker> book.</example>
+            <example correction="">I don chop <marker>an</marker> apple.</example>
         </rule>
     </category>
 </rules>

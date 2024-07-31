@@ -18,6 +18,7 @@
  */
 package org.languagetool.tagging.pcm;
 
+import com.google.common.collect.ImmutableSet;
 import org.languagetool.AnalyzedToken;
 import org.languagetool.AnalyzedTokenReadings;
 import org.languagetool.tagging.BaseTagger;
@@ -26,6 +27,7 @@ import org.languagetool.tools.StringTools;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 /**
  * Naija Part-of-speech tagger.
@@ -35,6 +37,33 @@ import java.util.Locale;
  * @author Nicholas Kajoh
  */
 public class NaijaTagger extends BaseTagger {
+  private static final String VERB_BASE_FORM_TAG = "VB";
+  private static final String NOUN_SINGULAR_COUNT_TAG = "NN";
+  private static final String ADJECTIVE_TAG = "JJ";
+
+  private static final Set<String> VERBS = ImmutableSet.of(
+    "baff",
+    "breet",
+    "hol",
+    "laff",
+    "nak",
+    "sabi",
+    "tink",
+    "wan"
+  );
+
+  private static final Set<String> NOUNS = ImmutableSet.of(
+    "tiff",
+    "olopka",
+    "tori",
+    "moni"
+  );
+
+  private static final Set<String> ADJECTIVES = ImmutableSet.of(
+    "taya",
+    "plenti"
+  );
+
   public static final NaijaTagger INSTANCE = new NaijaTagger();
 
   public NaijaTagger() {
@@ -94,6 +123,17 @@ public class NaijaTagger extends BaseTagger {
             getWordTagger().tag(correctedWord.toLowerCase()));
           addTokens(lowerTaggerTokens, l);
         }
+      }
+
+      // Tag Naija words not in English, or with different spellings.
+      if (VERBS.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, VERB_BASE_FORM_TAG, lowerWord));
+      }
+      if (NOUNS.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, NOUN_SINGULAR_COUNT_TAG, lowerWord));
+      }
+      if (ADJECTIVES.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, ADJECTIVE_TAG, lowerWord));
       }
 
       if (l.isEmpty()) {

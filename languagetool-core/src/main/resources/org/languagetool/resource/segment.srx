@@ -6896,6 +6896,7 @@
 <languagemap languagepattern="(EL|el).*" languagerulename="Greek"></languagemap>
 <languagemap languagepattern="(PL|pl).*" languagerulename="Polish"></languagemap>
 <languagemap languagepattern="(EN|en).*" languagerulename="English"></languagemap>
+<languagemap languagepattern="(PCM|pcm).*" languagerulename="English"></languagemap>
 <languagemap languagepattern="(NL|nl).*" languagerulename="Dutch"></languagemap>
 <languagemap languagepattern="(RO|ro).*" languagerulename="Romanian"></languagemap>
 <languagemap languagepattern="(SK|sk).*" languagerulename="Slovak"></languagemap>
